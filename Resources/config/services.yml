@@ -1,0 +1,18 @@
+services:
+    wearejust_redirect.admin.redirect:
+        class: Wearejust\RedirectBundle\Admin\RedirectAdmin
+        arguments: [~, Wearejust\RedirectBundle\Entity\Redirect, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Redirects, label: Redirects, on_top: true }
+
+    wearejust_redirect.repository.redirect_repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - Wearejust\RedirectBundle\Entity\Redirect
+
+    wearejust_redirect.event_listener.exception_listener:
+        class: Wearejust\RedirectBundle\EventListener\ExceptionListener
+        arguments: ['@wearejust_redirect.repository.redirect_repository']
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }

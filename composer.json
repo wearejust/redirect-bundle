@@ -1,0 +1,33 @@
+{
+    "name": "wearejust/redirect-bundle",
+    "description": "Small wrapper for using redirects",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cees van Egmond",
+            "email": "cees.vanegmond@wearejust.com"
+        },
+        {
+            "name": "John in 't Hout",
+            "email": "john.inthout@wearejust.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wearejust\\RedirectBundle\\": ""
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "doctrine/doctrine-bundle": "~1.5",
+        "symfony/framework-bundle": "~2.7|~3.0"
+    },
+    "suggest": {
+        "sonata-project/admin-bundle": "Can be easily integrated with Sonata Admin bundle",
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    }
+}
