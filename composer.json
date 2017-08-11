@@ -24,7 +24,7 @@
         "symfony/framework-bundle": "~2.7|~3.0"
     },
     "suggest": {
-        "sonata-project/admin-bundle": "Can be easily integrated with Sonata Admin bundle",
+        "sonata-project/admin-bundle": "Can be easily integrated with Sonata Admin bundle"
     },
     "minimum-stability": "stable",
     "config": {
