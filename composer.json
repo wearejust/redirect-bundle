@@ -26,6 +26,11 @@
     "suggest": {
         "sonata-project/admin-bundle": "Can be easily integrated with Sonata Admin bundle"
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        }
+    },
     "minimum-stability": "stable",
     "config": {
         "sort-packages": true
