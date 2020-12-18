@@ -11,8 +11,8 @@ services:
         arguments:
             - Wearejust\RedirectBundle\Entity\Redirect
 
-    wearejust_redirect.event_listener.exception_listener:
-        class: Wearejust\RedirectBundle\EventListener\ExceptionListener
+    wearejust_redirect.event_listener.redirect_listener:
+        class: Wearejust\RedirectBundle\EventListener\RedirectListener
         arguments: ['@wearejust_redirect.repository.redirect_repository']
         tags:
-            - { name: kernel.event_listener, event: kernel.exception }
+            - { name: kernel.event_listener, event: kernel.controller }

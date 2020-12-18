@@ -7,7 +7,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Wearejust\RedirectBundle\Repository\RedirectRepository;
 
-class ExceptionListener
+class RedirectListener
 {
     /**
      * @var \Wearejust\RedirectBundle\Repository\RedirectRepository
@@ -25,14 +25,8 @@ class ExceptionListener
     /**
      * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
      */
-    public function onKernelException(GetResponseForExceptionEvent $event)
+    public function onKernelController(\Symfony\Component\HttpKernel\Event\ControllerEvent $event)
     {
-        $exception = $event->getException();
-
-        if (! $exception instanceof HttpExceptionInterface) {
-            return;
-        }
-
         $path = $event->getRequest()->getRequestUri();
         $host = $event->getRequest()->getHttpHost();
 
@@ -52,6 +46,8 @@ class ExceptionListener
             $uri = $event->getRequest()->getUriForPath($uri);
         }
 
-        $event->setResponse(new RedirectResponse($uri));
+        $event->setController(function() use ($uri) {
+            return new RedirectResponse($uri);
+        });
     }
 }
