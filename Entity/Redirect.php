@@ -114,7 +114,7 @@ class Redirect
      */
     public function setFromUrl($fromUrl)
     {
-        $this->fromUrl = $fromUrl;
+        $this->fromUrl = trim($fromUrl, '/');
 
         return $this;
     }

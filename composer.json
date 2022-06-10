@@ -20,8 +20,8 @@
     },
     "require": {
         "php": ">=7.0",
-        "doctrine/doctrine-bundle": "~1.5",
-        "symfony/framework-bundle": "~2.7|~3.0"
+        "doctrine/doctrine-bundle": "^2.6",
+        "symfony/framework-bundle": "~2.7|~4.0"
     },
     "suggest": {
         "sonata-project/admin-bundle": "Can be easily integrated with Sonata Admin bundle"

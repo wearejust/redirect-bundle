@@ -37,7 +37,7 @@ class AppKernel extends Kernel
         $bundles = array(
             // ...
 
-            new Wearejust\UserBundle\WearejustRedirectBundle(),
+            new Wearejust\RedirectBundle\WearejustRedirectBundle(),
         );
 
         // ...
